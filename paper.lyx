@@ -1,0 +1,993 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{physics}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Electron Correlations in 
+\begin_inset Formula $SrTiO_{3}/LaAlO_{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Yotam Gigi and Moshe Goldstein
+\end_layout
+
+\begin_layout Abstract
+To be written
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Standard
+In their normal form, both the 
+\begin_inset Formula $LaAlO_{3}$
+\end_inset
+
+and 
+\begin_inset Formula $SrTiO_{3}$
+\end_inset
+
+are insulators, but experiments
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+
+\end_inset
+
+ reveal that once a thick enough layer of one of the materials is grown
+ upon the other, the two dimensional contact surface have some peculiar
+ properties, which among them is super conductivity.
+ In addition, the number of charge carrier can be controlled by applying
+ gate voltage 
+\begin_inset Formula $V_{g}$
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-2"
+
+\end_inset
+
+ and thus allowing conducting experiments that address it.
+\end_layout
+
+\begin_layout Standard
+Recently conducted experiments reveal some properties that cannot be explained
+ using the current standard independent-electron models: it is expected
+ that increasing the gate voltage will lead to monotonically increasing
+ amount of charge carriers, but from Shubnikov–de Haas (SdH) measurements
+ it is observed
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+
+\end_inset
+
+ that the number of charge carriers decreases with increasing the gate voltage,
+ which reveal an unexpected non-monotonic behavior.
+ In addition, a non-monotonic behavior is also observed in the relation
+ between 
+\begin_inset Formula $V_{g}$
+\end_inset
+
+ to the critical temperature and the critical magnetic field, where all
+ the non-monotonic behaviors are observed around the same value of 
+\begin_inset Formula $V_{g}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In order to provide explanation to that phenomena, it was suggested that
+ there are two energy bands in the contact surface
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-4"
+
+\end_inset
+
+, and while the total amount of charge carriers does increase monotonically
+ (as thermodynamics requires), the charge divides differently between the
+ bands as a function of 
+\begin_inset Formula $V_{g}$
+\end_inset
+
+, which leads to non-monotonic behavior in the population of one of the
+ bands.
+ This behavior cannot be foreseen by the current independent-electron models
+ and indicates that there are interactions between the charge carriers.
+\end_layout
+
+\begin_layout Section
+The Hartree and Hartree-Fock Approximations
+\end_layout
+
+\begin_layout Standard
+In order to theoretically address the problem there will be use of the model
+ described in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-5"
+
+\end_inset
+
+: the wave function will have the orbitals 
+\begin_inset Formula $xy$
+\end_inset
+
+, 
+\begin_inset Formula $xz$
+\end_inset
+
+, and 
+\begin_inset Formula $yz$
+\end_inset
+
+, and the electron has 2 spin states: 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ and 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+.
+ Hence, the wave function of the 
+\begin_inset Formula $i$
+\end_inset
+
+'th particle is described as 6 vector 
+\begin_inset Formula $\psi_{i}(r_{i},s_{i})$
+\end_inset
+
+ where each cell 
+\begin_inset Formula $s_{i}=xy\downarrow,xy\uparrow,xz\downarrow,xz\uparrow,yz\downarrow,yz\downarrow$
+\end_inset
+
+ is a function of the spatial coordinates and describes the probability
+ amplitude to be in one of the orbitals and one of the spin states for every
+ spatial coordinates.
+ In this model, the Hamiltonian is 
+\begin_inset Formula 
+\begin{equation}
+H=\sum_{i=1}^{N}H_{i}(s_{i},s_{i}')+\frac{1}{2}\sum_{i\ne j}V_{i,j}(r_{i},r_{j})
+\end{equation}
+
+\end_inset
+
+Where 
+\begin_inset Formula $H_{i}(s_{i},s_{i}')$
+\end_inset
+
+ is a matrix operating on the spin argument of the 
+\begin_inset Formula $i$
+\end_inset
+
+'th particle and on the spatial coordinates 
+\begin_inset Formula $r_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+According to the Hartree approximation, the 
+\begin_inset Formula $N$
+\end_inset
+
+ particles equation is:
+\begin_inset Formula 
+\begin{equation}
+H\psi_{m}(r,s)+\psi_{m}(r,s)\sum_{j\ne m}\sum_{s'}\int|\psi_{j}(r',s')|^{2}V_{j,m}(r,r')dr'=\lambda_{m}\psi_{m}(r,s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Recalling that there is a particle for every wave vector 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+, the discrete 
+\begin_inset Formula $m$
+\end_inset
+
+ will be taken as continuous two dimensional 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+.
+ In addition, there will be use of the Hubbard 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+
+\end_inset
+
+ short term repulsion of the form 
+\begin_inset Formula $V(r_{1},r_{2})=\delta(r_{1}-r_{2})$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\sum_{s'}H(s,s')\psi(\vec{k},s';p)+\psi(\vec{k},s;p)\sum_{s'}\sum_{p'}\int dk'|\psi(\vec{k}',s',p')|^{2}=\lambda(\vec{k};p)\psi(\vec{k},s;p)
+\end{equation}
+
+\end_inset
+
+Doing the same with the Hartree-Fock approximation, the equation is:
+\begin_inset Formula 
+\begin{multline}
+\sum_{s'}H(s,s')\psi(\vec{k},s';p)+\psi(\vec{k},s;p)\sum_{s'}\sum_{p'}\int dk'|\psi(\vec{k}',s',p')|^{2}-\\
+-\sum_{s'}\psi(\vec{k},s',p)\sum_{p'}\int dk'\psi(\vec{k}',s,p')\psi^{*}(\vec{k}',s',p')=\lambda(\vec{k};p)\psi(\vec{k},s;p)
+\end{multline}
+
+\end_inset
+
+Introducing a shorter notation: 
+\begin_inset Formula $\psi(\vec{k},s,p)\rightarrow\psi_{s}$
+\end_inset
+
+, 
+\begin_inset Formula $\sum_{s'}H(s,s')\psi(\vec{k},s';p)\rightarrow\sum_{s'}H_{s,s'}\psi_{s'}$
+\end_inset
+
+.
+ In addition, the integral elements will be noted
+\begin_inset Formula $\sum_{p'}\int dk'\psi(\vec{k}',s,p')\psi^{*}(\vec{k}',s',p')dk'\equiv\mathbb{F}_{s,s'}$
+\end_inset
+
+ and will be referred as the Fock elements.
+ The Hartree equations now get the form:
+\begin_inset Formula 
+\begin{equation}
+\sum_{s'}H_{s,s'}\psi_{s'}+\psi_{s}\sum_{s'}\mathbb{F}_{s',s'}=\lambda_{p}\psi_{s}\label{eq: hartree shortened}
+\end{equation}
+
+\end_inset
+
+The Hartree-Fock equation get the form:
+\begin_inset Formula 
+\begin{equation}
+\sum_{s'}H_{s,s'}\psi_{s'}+\psi_{s}\sum_{s'}\mathbb{F}_{s',s'}+\sum_{s'}\psi_{s}\mathbb{F}_{s,s'}=\lambda_{p}\psi_{s}\label{eq: fock shortened}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Symmetry Analysis
+\end_layout
+
+\begin_layout Standard
+To reduce the complexity of the calculations, the symmetries of the system
+ has been examined.
+ 
+\end_layout
+
+\begin_layout Subsection
+Rotation Symmetries
+\end_layout
+
+\begin_layout Standard
+The system has the symmetry of 
+\begin_inset Formula $90\textdegree$
+\end_inset
+
+ rotation around the 
+\begin_inset Formula $\hat{z}$
+\end_inset
+
+ axis, as there is no preferable direction among 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+.
+ Introducing the 
+\begin_inset Formula $\hat{R}$
+\end_inset
+
+ operator, which rotates by 
+\begin_inset Formula $90\textdegree$
+\end_inset
+
+ , it can be shown that the orbitals part behave according to 
+\begin_inset Formula $\hat{R}\psi_{xy}=-\psi_{xy}$
+\end_inset
+
+ , 
+\begin_inset Formula $\hat{R}\psi_{xz}=\psi_{yz}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{R}\psi_{xz}=-\psi_{yz}$
+\end_inset
+
+.
+ In the spin space, the 
+\begin_inset Formula $\hat{R}$
+\end_inset
+
+ operator is represented by a matrix according to:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{R}=e^{-i\frac{\theta}{2}\hat{n}\cdot\vec{\sigma}}=e^{-i\frac{\pi}{4}\sigma_{z}}=\left(\begin{matrix}e^{i\frac{\pi}{4}} & 0\\
+0 & e^{-i\frac{\pi}{4}}
+\end{matrix}\right)
+\end{equation}
+
+\end_inset
+
+Hence, it can be observed that: 
+\begin_inset Formula 
+\begin{equation}
+\hat{R}\ket{\uparrow}=e^{i\frac{\pi}{4}}\ket{\uparrow}and\hat{R}\ket{\downarrow}=e^{-i\frac{\pi}{4}}\ket{\downarrow}.
+\end{equation}
+
+\end_inset
+
+Taking into account that every Fock element must be invariant under 
+\begin_inset Formula $\hat{R}$
+\end_inset
+
+, the Fock elements will be revisited.
+ Requiring 
+\begin_inset Formula $\mathbb{F}_{xz\downarrow,xz\downarrow}$
+\end_inset
+
+ to be invariant under 
+\begin_inset Formula $\hat{R}$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{multline}
+\mathbb{F}_{xz\downarrow,xz\downarrow}=\sum_{p'}\int dk'\psi(\vec{k}',xz\downarrow,p')\psi^{*}(\vec{k}',xz\downarrow,p')dk'=\\
+\sum_{p'}\int dk'\psi(\vec{k}',yz\uparrow,p')\psi^{*}(\vec{k}',yz\uparrow,p')dk'=\mathbb{F}_{yz\uparrow,yz\uparrow}\label{eq: R_xzd_xzd}
+\end{multline}
+
+\end_inset
+
+from 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq: R_xzd_xzd"
+
+\end_inset
+
+ it can be seen that:
+\begin_inset Formula 
+\begin{equation}
+\mathbb{F}_{xz\downarrow,xz\downarrow}=\mathbb{F}_{yz\downarrow,yz\downarrow}
+\end{equation}
+
+\end_inset
+
+By doing the same with 
+\begin_inset Formula $\mathbb{F}_{xy\downarrow,xz\uparrow}$
+\end_inset
+
+,
+\begin_inset Formula $\mathbb{F}_{xy\uparrow,xz\downarrow}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbb{F}_{xy\downarrow,xz\uparrow}$
+\end_inset
+
+it can be seen that:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathbb{F}_{xy\downarrow,xz\uparrow}=i\mathbb{F}_{xy\downarrow,yz\uparrow}\ \ \ \ \ \mathbb{F}_{xy\uparrow,xz\downarrow}=-i\mathbb{F}_{xy\uparrow,yz\downarrow}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\mathbb{F}_{xy\downarrow,xz\uparrow}=-\mathbb{F}_{xy\downarrow,xz\uparrow}=0\label{eq: R_xzd_yzu}
+\end{equation}
+
+\end_inset
+
+where from 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq: R_xzd_yzu"
+
+\end_inset
+
+ it can be deduced that every Fock element containing combination of 
+\begin_inset Formula $\psi_{xz}$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi_{yz}$
+\end_inset
+
+ with mixed spin states will vanish:
+\begin_inset Formula 
+\[
+\mathbb{F}_{xz\uparrow,yz\downarrow}=\mathbb{F}_{xz\downarrow,yz\uparrow}=\mathbb{F}_{yz\uparrow,xz\downarrow}=\mathbb{F}_{yz\downarrow,xz\uparrow}=0
+\]
+
+\end_inset
+
+by applying two 
+\begin_inset Formula $90\textdegree$
+\end_inset
+
+ rotations upon Fock elements containing 
+\begin_inset Formula $\psi_{xy}$
+\end_inset
+
+ and with either 
+\begin_inset Formula $\psi_{xz}$
+\end_inset
+
+ or 
+\begin_inset Formula $\psi_{yz}$
+\end_inset
+
+ with the same spin direction it can be deduced that:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathbb{F}_{xy\uparrow,yz\uparrow}=\mathbb{F}_{xy\downarrow,yz\downarrow}=\mathbb{F}_{xy\uparrow,xz\uparrow}=\mathbb{F}_{xy\downarrow,xz\downarrow}=0
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\mathbb{F}_{xz\uparrow,xy\uparrow}=\mathbb{F}_{xz\downarrow,xy\downarrow}=\mathbb{F}_{yz\uparrow,xy\uparrow}=\mathbb{F}_{yz\downarrow,xy\downarrow}=0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Time Reversal Symmetry
+\end_layout
+
+\begin_layout Standard
+The system should be invariant for time reversal operator 
+\begin_inset Formula $\hat{T}$
+\end_inset
+
+.
+ Under time reversal transformation, the wave function changes according
+ 
+\begin_inset Formula $\hat{T}\psi_{\uparrow}=\psi_{\downarrow}^{*};\hat{T}\psi_{\downarrow}=-\psi_{\uparrow}^{*}$
+\end_inset
+
+.
+ The implications over the Fock elements is:
+\begin_inset Formula 
+\begin{equation}
+\mathbb{F}_{\alpha\downarrow,\beta\downarrow}=\mathbb{F}_{\beta\uparrow,\alpha\uparrow}\ \ ,\ \ \mathbb{F}_{\alpha\uparrow,\beta\uparrow}=\mathbb{F}_{\beta\downarrow,\alpha\downarrow}\ \ ,\ \ \mathbb{F}_{\alpha\uparrow,\beta\downarrow}=-\mathbb{F}_{\beta\uparrow,\alpha\downarrow}\ \ ,\ \ \mathbb{F}_{\alpha\downarrow,\beta\uparrow}=\mathbb{F}_{\beta\downarrow,\alpha\uparrow}\label{eq: time_reversal_general}
+\end{equation}
+
+\end_inset
+
+Where 
+\begin_inset Formula $\alpha,\beta=xy,xz,yz$
+\end_inset
+
+.
+ From 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq: time_reversal_general"
+
+\end_inset
+
+ it can be easily deduced that for every 
+\begin_inset Formula $\alpha=xy,xz,yz$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\mathbb{F}_{\alpha\downarrow,\alpha\downarrow}=\mathbb{F}_{\alpha\uparrow,\alpha\uparrow}\ \ ,\ \ \mathbb{F}_{\alpha\downarrow,\alpha\uparrow}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Reflection Symmetry
+\end_layout
+
+\begin_layout Standard
+The system has the reflection symmetry over the 
+\begin_inset Formula $\hat{x}\hat{z}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{y}\hat{z}$
+\end_inset
+
+ planes.
+ The reflection over 
+\begin_inset Formula $\hat{y}\hat{z}$
+\end_inset
+
+ plane can be split into two operations: inversion of spatial coordinates
+ and 
+\begin_inset Formula $180\textdegree$
+\end_inset
+
+ rotation around 
+\begin_inset Formula $\hat{z}$
+\end_inset
+
+.
+ While the inversion adds a constant 
+\begin_inset Formula $|b|=1$
+\end_inset
+
+ to the wave function, the rotation inverts the spin (as can be seen according
+ to Rotation Symmetry section).
+ Hence:
+\begin_inset Formula 
+\begin{equation}
+\mathbb{F}_{xy\downarrow,xz\uparrow}=bb^{*}\mathbb{F}_{xz\uparrow,xy\downarrow}=\left(\mathbb{F}_{xy\downarrow,xz\uparrow}\right)^{*}
+\end{equation}
+
+\end_inset
+
+Which implies that the Fock element is real.
+\end_layout
+
+\begin_layout Subsection
+Symmetries: Summary
+\end_layout
+
+\begin_layout Standard
+According to the symmetries analysis, many of the Fock elements have vanished
+ and many equalities emerged.
+ To sum up all the relations between the Fock elements, the variables 
+\begin_inset Formula $N_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $N_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $N_{\alpha}$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{\beta}$
+\end_inset
+
+ will be introduced:
+\begin_inset Formula 
+\begin{equation}
+N_{1}=\mathbb{F}_{xy\uparrow,xy\uparrow}=\mathbb{F}_{xy\downarrow,xy\downarrow}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+N_{2}=\mathbb{F}_{xz\uparrow,xz\uparrow}=\mathbb{F}_{xz\downarrow,xz\downarrow}=\mathbb{F}_{yz\uparrow,yz\uparrow}=\mathbb{F}_{yz\downarrow,yz\downarrow}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{multline}
+N_{\alpha}=\mathbb{F}_{xy\downarrow,xz\uparrow}=-\mathbb{F}_{xz\downarrow,xy\uparrow}=i\mathbb{F}_{xy\downarrow,yz\uparrow}=-i\mathbb{F}_{yz\downarrow,xy\uparrow}\\
+=\mathbb{F}_{xy\uparrow,yz\downarrow}=-\mathbb{F}_{xz\uparrow,xy\downarrow}=-i\mathbb{F}_{xy\uparrow,yz\downarrow}=i\mathbb{F}_{yz\uparrow,xy\downarrow}
+\end{multline}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+N_{\beta}=\mathbb{F}_{xz\uparrow,yz\uparrow}=\mathbb{F}_{yz\downarrow,xz\downarrow}=\mathbb{F}_{xz\downarrow,yz\downarrow}=\mathbb{F}_{yz\uparrow,xz\uparrow}
+\end{equation}
+
+\end_inset
+
+Where it can be noticed that 
+\begin_inset Formula $N_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{2}$
+\end_inset
+
+ are real where 
+\begin_inset Formula $N_{\alpha}$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{\beta}$
+\end_inset
+
+ are pure imaginary.
+\end_layout
+
+\begin_layout Section
+The Final Equations
+\end_layout
+
+\begin_layout Standard
+Using the output from the symmetries and placing it in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq: hartree shortened"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq: fock shortened"
+
+\end_inset
+
+, the Hartree-Fock equations get the form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{s'}H_{xy\downarrow,s'}\psi_{s'}+\psi_{xy\downarrow}\left(N_{1}+4N_{2}\right)-N_{\alpha}\left(\psi_{xy\downarrow}-i\psi_{yz\uparrow}\right)=\lambda(k)\psi_{xy\downarrow}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{s'}H_{xy\uparrow,s'}\psi_{s'}+\psi_{xy\uparrow}\left(N_{1}+4N_{2}\right)-N_{\alpha}\left(\psi_{xz\downarrow}+i\psi_{yz\downarrow}\right)=\lambda(k)\psi_{xy\uparrow}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{s'}H_{xz\downarrow,s'}\psi_{s'}+\psi_{xz\downarrow}\left(2N_{1}+3N_{2}\right)+N_{\alpha}\psi_{xy\uparrow}-N_{\beta}\psi_{yz\downarrow}=\lambda(k)\psi_{xz\downarrow}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{s'}H_{xz\uparrow,s'}\psi_{s'}+\psi_{xz\uparrow}\left(2N_{1}+3N_{2}\right)-N_{\alpha}\psi_{xy\downarrow}+N_{\beta}\psi_{yz\uparrow}=\lambda(k)\psi_{xz\uparrow}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{s'}H_{yz\downarrow,s'}\psi_{s'}+\psi_{yz\downarrow}\left(2N_{1}+3N_{2}\right)-iN_{\alpha}\psi_{xy\uparrow}+N_{\beta}\psi_{xz\downarrow}=\lambda(k)\psi_{yz\downarrow}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{s'}H_{yz\uparrow,s'}\psi_{s'}+\psi_{yz\uparrow}\left(2N_{1}+3N_{2}\right)+iN_{\alpha}\psi_{xy\downarrow}-N_{\beta}\psi_{xz\uparrow}=\lambda(k)\psi_{yz\uparrow}
+\]
+
+\end_inset
+
+Where the Hartree equations are given when taking 
+\begin_inset Formula $N_{\alpha}$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{\beta}$
+\end_inset
+
+ to be 0.
+ By looking at the equations, it can be seen that they can be written as
+ an eigenvalue problem with the effective Hamiltonian 
+\begin_inset Formula $\mathbb{\mathfrak{\mathbb{H=}}}(H+\Delta H)$
+\end_inset
+
+ where:
+\begin_inset Formula 
+\begin{multline*}
+\Delta H=\left(\begin{matrix}\gamma_{1} & 0 & 0 & -N_{\alpha} & 0 & iN_{\alpha}\\
+0 & \gamma_{1} & -N_{\alpha} & 0 & -iN_{\alpha} & 0\\
+0 & N_{\alpha} & \gamma_{2} & 0 & -N_{\beta} & 0\\
+N_{\alpha} & 0 & 0 & \gamma_{2} & 0 & N_{\beta}\\
+0 & -iN_{\alpha} & N_{\beta} & 0 & \gamma_{2} & 0\\
+iN_{\alpha} & 0 & 0 & -N_{\beta} & 0 & \gamma_{2}
+\end{matrix}\right)\\
+=\left[\begin{matrix}\gamma_{1} & -N_{\alpha}\sigma_{x} & -N_{\alpha}\sigma_{y}\\
+N_{\alpha}\sigma_{x} & \gamma_{2} & -N_{\beta}\sigma_{z}\\
+N_{\alpha}\sigma_{y} & N_{\beta}\sigma_{z} & \gamma_{2}
+\end{matrix}\right]
+\end{multline*}
+
+\end_inset
+
+Where 
+\begin_inset Formula $\gamma_{1}=N_{1}+4N_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\gamma_{2}=2N_{1}+3N_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The Numerical Solution
+\end_layout
+
+\begin_layout Standard
+Because of the fact that the 
+\begin_inset Formula $N_{1}$
+\end_inset
+
+,
+\begin_inset Formula $N_{2}$
+\end_inset
+
+,
+\begin_inset Formula $N_{\alpha}$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{\beta}$
+\end_inset
+
+ both appear in the equation and are a function of its solutions, the equations
+ are self consistent.
+ In addition, the equations can not be solved analiticly, as the eigenvalues
+ of the Hamiltonian canot be analiticly calculated.
+ It is possible, though, using values for 
+\begin_inset Formula $N_{1}$
+\end_inset
+
+,
+\begin_inset Formula $N_{2}$
+\end_inset
+
+,
+\begin_inset Formula $N_{\alpha}$
+\end_inset
+
+,
+\begin_inset Formula $N_{\beta}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ to calculate the Hamiltonian and numericly find the eigen values and eigen
+ vectors.
+ Using those values, it is possible to integrate over all 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+In that case, the solution should involve guessing inital values for 
+\begin_inset Formula $N_{1}$
+\end_inset
+
+,
+\begin_inset Formula $N_{2}$
+\end_inset
+
+,
+\begin_inset Formula $N_{\alpha}$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{\beta}$
+\end_inset
+
+, calculating the Hamiltonian matrix using that values for specific 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+, integrating over all 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+A.
+ Annadi et al., Anisotropic two-dimensional electron gas at the LaAlO3/SrTiO3
+ (110) interface, Nature Communications 4, 1838 (2013).
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+A.
+ Caviglia et al., Electric field control of the LaAlO3/SrTiO3 interface ground
+ state, Nature 456, 624 (2008).
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+E.
+ Maniv, M.
+ Ben Shalom, A.
+ Ron, M.
+ Mograbi, A.
+ Palevski, M.
+ Goldstein, and Y.
+ Dagan, Strong correlations elucidate the electronic structure and phase-diagram
+ of LaAlO3/SrTiO3 interface, Nature Communications 6, 8239 (2015) 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+M.
+ Ben Shalom, A.
+ Ron, A.
+ Palevski, and Y.
+ Dagan, Shubnikov–de haas oscillations in SrTiO3/LaAlO3 interface, Physical
+ Review Letters 105, 206401 (2010).
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+A.
+ Joshua, S.
+ Pecker, J.
+ Ruhman, E.
+ Altman, and S.
+ Ilani, A universal critical density underlying the physics of electrons
+ at the LaAlO3/SrTiO3 interface, Nature Communications 3, 1129 (2012).
+ 
+\end_layout
+
+\end_body
+\end_document
