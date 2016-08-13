@@ -836,6 +836,170 @@ Where
 \end_layout
 
 \begin_layout Section
+The Model
+\end_layout
+
+\begin_layout Standard
+For the Hamiltinian 
+\begin_inset Formula $H$
+\end_inset
+
+, the model is taken to be the sum of two terms: 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, a 6x6 Hamiltonian in 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ space, and 
+\begin_inset Formula $H_{SO}$
+\end_inset
+
+, the spin-orbit coupling term.
+ The first term is:
+\begin_inset Formula 
+\begin{equation}
+H_{0}=\left[\begin{array}{ccc}
+\epsilon_{xy}(\vec{k})-\Delta_{E} & 0 & 0\\
+0 & \epsilon_{xz}(\vec{k}) & 2t_{d}sin(k_{x}a)sin(k_{y}a)\\
+0 & 2t_{d}sin(k_{x}a)sin(k_{y}a) & \epsilon_{yz}(\vec{k})
+\end{array}\right]\otimes I_{2}
+\end{equation}
+
+\end_inset
+
+with 
+\begin_inset Formula $I_{2}$
+\end_inset
+
+ is is the 2x2 identity matrix, and:
+\begin_inset Formula 
+\[
+\epsilon_{xy}(\vec{k})=2t_{l}\left[2-cos(k_{x}a)-cos(k_{y}a)\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\epsilon_{xz}(\vec{k})=2t_{l}\left[1-cos(k_{y}a)\right]+2t_{h}\left[1-cos(k_{y}a)\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\epsilon_{yz}(\vec{k})=2t_{h}\left[1-cos(k_{y}a)\right]+2t_{l}\left[1-cos(k_{y}a)\right]
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $a=3.905\AA$
+\end_inset
+
+ is the 
+\begin_inset Formula $SrTiO_{3}$
+\end_inset
+
+ lattice constant and 
+\begin_inset Formula $t_{l}$
+\end_inset
+
+, 
+\begin_inset Formula $t_{h}$
+\end_inset
+
+ and 
+\begin_inset Formula $t_{d}$
+\end_inset
+
+ are respectivly the light, the heavy and the 
+\begin_inset Formula $yz-xz$
+\end_inset
+
+ mixing tunneling matrix elements.
+ The tunneling constants where calculated using the effective masses 
+\begin_inset Formula $m_{l}=0.7m_{e}$
+\end_inset
+
+ and 
+\begin_inset Formula $m_{h}=15m_{e}$
+\end_inset
+
+ using the relation: 
+\begin_inset Formula $t=\hbar^{2}/(2ma^{2})$
+\end_inset
+
+.
+ The constant 
+\begin_inset Formula $\Delta_{E}$
+\end_inset
+
+ represents the relative shift beween 
+\begin_inset Formula $xy$
+\end_inset
+
+ and 
+\begin_inset Formula $xz-yz$
+\end_inset
+
+ due to the confinement potential at the 
+\begin_inset Formula $SrTiO_{3}/LaAlO_{3}$
+\end_inset
+
+ interface and was taken to be 
+\begin_inset Formula $47meV$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The spin-orbit coupling term was taken to be:
+\begin_inset Formula 
+\begin{equation}
+H_{SO}=\frac{i\Delta_{SO}}{2}\left[\begin{array}{ccc}
+0 & \sigma_{x} & -\sigma_{y}\\
+\sigma_{x} & 0 & -\sigma_{z}\\
+\sigma_{y} & -\sigma_{z} & 0
+\end{array}\right]
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\Delta_{SO}$
+\end_inset
+
+ represents the magnitude of the spin-orbit coupling, and various values
+ for it were tested.
+ The total Hamiltnian then is the:
+\begin_inset Formula 
+\[
+\mathbb{\mathfrak{\mathbb{H=}}}H_{0}+H_{SO}+\Delta H
+\]
+
+\end_inset
+
+where
+\begin_inset Formula $\Delta H$
+\end_inset
+
+ is taken by 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:delta_H"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
 The Numerical Solution
 \end_layout
 
