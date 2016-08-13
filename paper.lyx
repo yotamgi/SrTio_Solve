@@ -444,8 +444,8 @@ Taking into account that every Fock element must be invariant under
 : 
 \begin_inset Formula 
 \begin{multline}
-\mathbb{F}_{xz\downarrow,xz\downarrow}=\sum_{p'}\int dk'\psi(\vec{k}',xz\downarrow,p')\psi^{*}(\vec{k}',xz\downarrow,p')dk'=\\
-\sum_{p'}\int dk'\psi(\vec{k}',yz\uparrow,p')\psi^{*}(\vec{k}',yz\uparrow,p')dk'=\mathbb{F}_{yz\uparrow,yz\uparrow}\label{eq: R_xzd_xzd}
+\mathbb{F}_{xz\downarrow,xz\downarrow}=\sum_{p'}\int d^{2}\vec{k}'\psi(\vec{k}',xz\downarrow,p')\psi^{*}(\vec{k}',xz\downarrow,p')=\\
+\sum_{p'}\int d^{2}\vec{k}'\psi(\vec{k}',yz\uparrow,p')\psi^{*}(\vec{k}',yz\uparrow,p')=\mathbb{F}_{yz\uparrow,yz\uparrow}\label{eq: R_xzd_xzd}
 \end{multline}
 
 \end_inset
