@@ -907,6 +907,13 @@ where
 \begin_inset Formula $a=3.905\AA$
 \end_inset
 
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+
+\end_inset
+
  is the 
 \begin_inset Formula $SrTiO_{3}$
 \end_inset
@@ -936,7 +943,14 @@ where
 \begin_inset Formula $m_{h}=15m_{e}$
 \end_inset
 
- using the relation: 
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+
+\end_inset
+
+using the relation: 
 \begin_inset Formula $t=\hbar^{2}/(2ma^{2})$
 \end_inset
 
