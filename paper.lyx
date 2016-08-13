@@ -679,7 +679,7 @@ According to the symmetries analysis, many of the Fock elements have vanished
  will be introduced:
 \begin_inset Formula 
 \begin{equation}
-N_{1}=\mathbb{F}_{xy\uparrow,xy\uparrow}=\mathbb{F}_{xy\downarrow,xy\downarrow}
+N_{1}=\mathbb{F}_{xy\uparrow,xy\uparrow}=\mathbb{F}_{xy\downarrow,xy\downarrow}\label{eq: N1_formula}
 \end{equation}
 
 \end_inset
@@ -704,7 +704,7 @@ N_{\alpha}=\mathbb{F}_{xy\downarrow,xz\uparrow}=-\mathbb{F}_{xz\downarrow,xy\upa
 
 \begin_inset Formula 
 \begin{equation}
-N_{\beta}=\mathbb{F}_{xz\uparrow,yz\uparrow}=\mathbb{F}_{yz\downarrow,xz\downarrow}=\mathbb{F}_{xz\downarrow,yz\downarrow}=\mathbb{F}_{yz\uparrow,xz\uparrow}
+N_{\beta}=\mathbb{F}_{xz\uparrow,yz\uparrow}=\mathbb{F}_{yz\downarrow,xz\downarrow}=\mathbb{F}_{xz\downarrow,yz\downarrow}=\mathbb{F}_{yz\uparrow,xz\uparrow}\label{Nb_formula}
 \end{equation}
 
 \end_inset
@@ -1024,7 +1024,7 @@ The Numerical Solution
 \end_layout
 
 \begin_layout Standard
-Because of the fact that the 
+Because of the fact that the Fock Elements 
 \begin_inset Formula $N_{1}$
 \end_inset
 
@@ -1044,61 +1044,325 @@ Because of the fact that the
  are self consistent.
  In addition, the equations can not be solved analiticly, as the eigenvalues
  of the Hamiltonian canot be analiticly calculated.
- It is possible, though, using values for 
-\begin_inset Formula $N_{1}$
-\end_inset
-
-,
-\begin_inset Formula $N_{2}$
-\end_inset
-
-,
-\begin_inset Formula $N_{\alpha}$
-\end_inset
-
-,
-\begin_inset Formula $N_{\beta}$
-\end_inset
-
- and 
+ It is possible, though, using values for the Fock Elements and for 
 \begin_inset Formula $\vec{k}$
 \end_inset
 
- to calculate the Hamiltonian and numericly find the eigen values and eigen
- vectors.
- Using those values, it is possible to integrate over all 
+ to calculate the Hamiltonian 6x6 mtarix and numericly find the eigen values
+ and eigen vectors.
+ Using that fact, it is possible to integrate over 
 \begin_inset Formula $\vec{k}$
 \end_inset
 
- 
+ (according to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq: N1_formula"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Nb_formula"
+
+\end_inset
+
+) to calculate back the Hartree-Fock elements.
+ By placing initial guess for those elements, it is possible to find using
+ numeric algorithms, a value for the Fock Elements that is self consistent
+ and solving the equations,
 \end_layout
 
 \begin_layout Standard
-In that case, the solution should involve guessing inital values for 
-\begin_inset Formula $N_{1}$
+The integration is done under the assumption the temprature is very low,
+ thus allowing the integration to be done over the fermi area which satisfies
+ 
+\begin_inset Formula $\epsilon_{i}(\vec{k})<\mu$
 \end_inset
 
-,
-\begin_inset Formula $N_{2}$
+ where 
+\begin_inset Formula $\mu$
 \end_inset
 
-,
-\begin_inset Formula $N_{\alpha}$
+ is the a function of the gate voltage 
+\begin_inset Formula $V_{g}$
 \end_inset
 
- and 
-\begin_inset Formula $N_{\beta}$
+, and 
+\begin_inset Formula $\epsilon_{i}(\vec{k})$
 \end_inset
 
-, calculating the Hamiltonian matrix using that values for specific 
-\begin_inset Formula $\vec{k}$
+ is the 
+\begin_inset Formula $i$
 \end_inset
 
-, integrating over all 
+'th band energy and can be calculated using as the 
+\begin_inset Formula $i$
+\end_inset
+
+'th eigen value of the Hamiltonian.
+ 
 \end_layout
 
 \begin_layout Subsection
 Saving Calculation Time Using Symmetries
+\end_layout
+
+\begin_layout Standard
+It can be shown that the integrand of the fock elements is 4-way symmetric,
+ thus allowing to integrate over one quadrature of Brilluine zone and multiply
+ by 4 to get the integral solution.
+ Starting with the 
+\begin_inset Formula $N_{\alpha}$
+\end_inset
+
+ integral:
+\begin_inset Formula 
+\[
+N_{\alpha}=\int dk'\psi_{xy\downarrow}\psi_{xz\uparrow}^{*}=\sum_{i=1}^{4}\int_{Q_{i}}dk'\psi_{xy\downarrow}\psi_{xz\uparrow}^{*}
+\]
+
+\end_inset
+
+Where 
+\begin_inset Formula $Q_{i}$
+\end_inset
+
+ represents the 
+\begin_inset Formula $i$
+\end_inset
+
+'th quadrature of the 2 diementional 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ space and 
+\begin_inset Formula $\int_{Q_{i}}dk'$
+\end_inset
+
+ is the integral over the 
+\begin_inset Formula $Q_{i}$
+\end_inset
+
+.
+ The integral over 
+\begin_inset Formula $Q_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $Q_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $Q_{4}$
+\end_inset
+
+ can be thought of an integral over 
+\begin_inset Formula $Q_{1}$
+\end_inset
+
+ where the integrand rotated by 
+\begin_inset Formula $90\textdegree$
+\end_inset
+
+, 
+\begin_inset Formula $180\textdegree$
+\end_inset
+
+, 
+\begin_inset Formula $270\textdegree$
+\end_inset
+
+ clockwise respectivly.
+ Using the 
+\begin_inset Formula $\hat{R}$
+\end_inset
+
+ operator introduced in the Symmetry Analysis section and its implications
+ over the wave function, one can get:
+\begin_inset Formula 
+\[
+\int_{Q_{2}}d\vec{k}'\psi_{xy\downarrow}\psi_{xz\uparrow}^{*}=\int_{Q_{1}}d\vec{k}'\hat{R}\left(\psi_{xy\downarrow}\psi_{xz\uparrow}^{*}\right)=i\int_{Q_{1}}d\vec{k}'\psi_{xy\downarrow}\psi_{yz\uparrow}^{*}=\int_{Q_{1}}d\vec{k}'\psi_{xy\downarrow}\psi_{xz\uparrow}^{*}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\int_{Q_{3}}d\vec{k}'\psi_{xy\downarrow}\psi_{xz\uparrow}^{*}=\int_{Q_{1}}d\vec{k}'\hat{R}^{2}\left(\psi_{xy\downarrow}\psi_{xz\uparrow}^{*}\right)=\int_{Q_{1}}d\vec{k}'\psi_{xy\downarrow}\psi_{xz\uparrow}^{*}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\int_{Q_{4}}d\vec{k}'\psi_{xy\downarrow}\psi_{xz\uparrow}^{*}=\int_{Q_{1}}d\vec{k}'\hat{R}^{3}\left(\psi_{xy\downarrow}\psi_{xz\uparrow}^{*}\right)=i\int_{Q_{1}}d\vec{k}'\psi_{xy\downarrow}\psi_{yz\uparrow}^{*}=\int_{Q_{1}}d\vec{k}'\psi_{xy\downarrow}\psi_{xz\uparrow}^{*}
+\]
+
+\end_inset
+
+Thus, to calculate 
+\begin_inset Formula $N_{\alpha}$
+\end_inset
+
+ it is sufficient to calculate the integral over 
+\begin_inset Formula $Q_{1}$
+\end_inset
+
+ and multiply by 4.
+ The same analysis can be done for 
+\begin_inset Formula $N_{\beta},N_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{2}$
+\end_inset
+
+ to get the same result.
+ 
+\end_layout
+
+\begin_layout Subsection
+Conductivity and Hall Coefficient
+\end_layout
+
+\begin_layout Standard
+In order to calculate the conductivity, it will be assumed that the relaxation
+ time 
+\begin_inset Formula $\tau$
+\end_inset
+
+ is dependent with 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ and the orbital 
+\begin_inset Formula $i$
+\end_inset
+
+ in the following way:
+\begin_inset Formula 
+\[
+\tau_{i}(\vec{k})=\sum_{s}|\psi_{i,s}(\vec{k})|^{2}\tau_{s}\ \ \ \ \tau_{i}^{2}(\vec{k})=\sum_{s}|\psi_{i,s}(\vec{k})|^{2}\tau_{s}^{2}
+\]
+
+\end_inset
+
+Where 
+\begin_inset Formula $\tau_{s}$
+\end_inset
+
+ is the base relaxtion time of the band 
+\begin_inset Formula $s$
+\end_inset
+
+, and will be calculated using the ralation 
+\begin_inset Formula $\xi_{s}=\frac{e\tau_{s}}{m_{s}}$
+\end_inset
+
+ taking 
+\begin_inset Formula $\xi_{xy}=6000\,cm^{2}V^{-1}s^{-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\xi_{xz}=\xi_{yz}=500\,cm^{2}V^{-1}s^{-1}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+
+\end_inset
+
+.
+ The masses 
+\begin_inset Formula $m_{s}$
+\end_inset
+
+ will be calculated according to:
+\begin_inset Formula 
+\[
+m_{xy}=m_{l}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{1}{m_{xz}}=\frac{1}{m_{yz}}=\frac{1}{2}\left(\frac{1}{m_{l}}+\frac{1}{m_{h}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using that, and remembering that in the semi-classical model the electron
+ speed is a partial derrivative of the energy 
+\begin_inset Formula $\epsilon(\vec{k})$
+\end_inset
+
+, the diagonal element of the conductivity tensor 
+\begin_inset Formula $\sigma_{xy}$
+\end_inset
+
+ can be calculated by:
+\begin_inset Formula 
+\begin{equation}
+\sigma_{xx}(\mu)=e^{2}\sum_{i\in bands}\int\frac{d^{2}\vec{k}}{(2\pi)^{2}}\frac{\partial f\left(\epsilon_{i}(\vec{k)}\right)}{\partial\mu}\left(\frac{\partial\epsilon_{i}}{\partial k_{x}}\right)^{2}\tau_{i}(\vec{k})
+\end{equation}
+
+\end_inset
+
+The off-diagonal elements, which correspond to the Hall Coefficient, can
+ be calculated using the formula described in Ref 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-6"
+
+\end_inset
+
+ and can written as:
+\begin_inset Formula 
+\begin{equation}
+\sigma_{xy}(\mu)=\frac{2e^{3}H}{c}\sum_{i\in bands}\int\frac{d^{2}\vec{k}}{(2\pi)^{2}}\frac{\partial f\left(\epsilon_{i}(\vec{k)}\right)}{\partial\mu}\frac{\partial\epsilon_{i}}{\partial k_{x}}\left(\frac{\partial\epsilon_{i}}{\partial k_{y}}\frac{\partial^{2}\epsilon_{i}}{\partial k_{y}\partial k_{y}}-\frac{\partial\epsilon_{i}}{\partial k_{x}}\frac{\partial^{2}\epsilon_{i}}{\partial k_{y}^{2}}\right)\tau_{i}^{2}(\vec{k})
+\end{equation}
+
+\end_inset
+
+Where the two integrals can be evaluated numerically using energy and the
+ wave function corresponding to a specific 
+\begin_inset Formula $\mu$
+\end_inset
+
+ as was shown earlier.
+ As for the fact the numeric integration has better accuracy over continuous
+ and smooth functions, and the fact that around the zero temprature, the
+ derrivative of 
+\begin_inset Formula $f\left(\epsilon_{i}(\vec{k)}\right)$
+\end_inset
+
+ tends toward 
+\begin_inset Formula $\delta\left(\epsilon_{i}(\vec{k})-\mu\right)$
+\end_inset
+
+, the order of the 
+\begin_inset Formula $\mu$
+\end_inset
+
+ partial derrivative and the integral sign will be reversed, and the integration
+ will be done on the fermi area.
+ 
+\end_layout
+
+\begin_layout Subsection
+Density of States
 \end_layout
 
 \begin_layout Standard
@@ -1195,6 +1459,19 @@ A.
  Ilani, A universal critical density underlying the physics of electrons
  at the LaAlO3/SrTiO3 interface, Nature Communications 3, 1129 (2012).
  
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-6"
+
+\end_inset
+
+J.
+ Henry, Geometric interpretation of the weak-field Hall conductivity in
+ two-dimensional metals with arbitrary Fermi surface, Physical Review B
+ 43,1 (1991)
 \end_layout
 
 \end_body
