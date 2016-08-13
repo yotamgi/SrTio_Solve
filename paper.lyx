@@ -296,17 +296,23 @@ key "key-3"
 
 :
 \begin_inset Formula 
-\begin{equation}
-\sum_{s'}H(s,s')\psi(\vec{k},s';p)+\psi(\vec{k},s;p)\sum_{s'}\sum_{p'}\int dk'|\psi(\vec{k}',s',p')|^{2}=\lambda(\vec{k};p)\psi(\vec{k},s;p)
-\end{equation}
+\begin{multline}
+\sum_{s'}H(s,s')\psi(\vec{k},s';p)+\psi(\vec{k},s;p)\sum_{s'}\sum_{p'}\int d^{2}\vec{k}'|\psi(\vec{k}',s',p')|^{2}f\left(\epsilon_{p'}(\vec{k})\right)=\\
+\lambda(\vec{k};p)\psi(\vec{k},s;p)
+\end{multline}
 
 \end_inset
 
-Doing the same with the Hartree-Fock approximation, the equation is:
+where 
+\begin_inset Formula $f$
+\end_inset
+
+ is the Fermi Diraq function.
+ Doing the same with the Hartree-Fock approximation, the equation is:
 \begin_inset Formula 
 \begin{multline}
-\sum_{s'}H(s,s')\psi(\vec{k},s';p)+\psi(\vec{k},s;p)\sum_{s'}\sum_{p'}\int dk'|\psi(\vec{k}',s',p')|^{2}-\\
--\sum_{s'}\psi(\vec{k},s',p)\sum_{p'}\int dk'\psi(\vec{k}',s,p')\psi^{*}(\vec{k}',s',p')=\lambda(\vec{k};p)\psi(\vec{k},s;p)
+\sum_{s'}H(s,s')\psi(\vec{k},s';p)+\psi(\vec{k},s;p)\sum_{s'}\sum_{p'}\int d^{2}\vec{k}'|\psi(\vec{k}',s',p')|^{2}-\\
+-\sum_{s'}\psi(\vec{k},s',p)\sum_{p'}\int d^{2}\vec{k}'\psi(\vec{k}',s,p')\psi^{*}(\vec{k}',s',p')=\lambda(\vec{k};p)\psi(\vec{k},s;p)
 \end{multline}
 
 \end_inset
