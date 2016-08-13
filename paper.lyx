@@ -803,12 +803,12 @@ Where the Hartree equations are given when taking
  to be 0.
  By looking at the equations, it can be seen that they can be written as
  an eigenvalue problem with the effective Hamiltonian 
-\begin_inset Formula $\mathbb{\mathfrak{\mathbb{H=}}}(H+\Delta H)$
+\begin_inset Formula $\mathbb{\mathfrak{\mathbb{H=}}}H+\Delta H$
 \end_inset
 
  where:
 \begin_inset Formula 
-\begin{multline*}
+\begin{multline}
 \Delta H=\left(\begin{matrix}\gamma_{1} & 0 & 0 & -N_{\alpha} & 0 & iN_{\alpha}\\
 0 & \gamma_{1} & -N_{\alpha} & 0 & -iN_{\alpha} & 0\\
 0 & N_{\alpha} & \gamma_{2} & 0 & -N_{\beta} & 0\\
@@ -819,8 +819,8 @@ iN_{\alpha} & 0 & 0 & -N_{\beta} & 0 & \gamma_{2}
 =\left[\begin{matrix}\gamma_{1} & -N_{\alpha}\sigma_{x} & -N_{\alpha}\sigma_{y}\\
 N_{\alpha}\sigma_{x} & \gamma_{2} & -N_{\beta}\sigma_{z}\\
 N_{\alpha}\sigma_{y} & N_{\beta}\sigma_{z} & \gamma_{2}
-\end{matrix}\right]
-\end{multline*}
+\end{matrix}\right]\label{eq:delta_H}
+\end{multline}
 
 \end_inset
 
